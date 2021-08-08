@@ -13,6 +13,15 @@ import $ from "jquery";
  * and the onload() event listener to finish the exercise
  */
 function exercise01() {
+
+  XMLHttpRequest.open("GET", "https://jsonplaceholder.typicode.com/posts?_limit=20")
+  XMLHttpRequest.onload = function (){
+    $("#data").text(XMLHttpRequest.response);
+  };
+
+  XMLHttpRequest.onerror = function () {
+    $("#data").text("failed");
+  };
   // Complete the code of the function
 }
 

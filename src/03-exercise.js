@@ -15,6 +15,11 @@ import $ from "jquery";
  * You should use the fetch() method to fetch the data.
  */
 function exercise03() {
+  return fetch("https://jsonplaceholder.typicode.com/posts/1/comments")
+    .then((res) => res.json())
+    .then((data) => {
+      $("#data").text(JSON.stringify(data, null, 2));
+    });
   // Complete the code of the function
   // Make sure to return the fetch method call
   // return fetch()...
